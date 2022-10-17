@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&display=swap");
+:root {
+  --input-error-clr: hsl(0, 100%, 66%);
+  --body-clr: hsl(278, 68%, 11%);
+  --shadow-clr: hsl(270, 3%, 87%);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  color: hsl(278, 68%, 11%);
+  margin: 0;
+  min-height: 100vh;
+}
+::placeholder {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
+  color: hsl(270, 3%, 87%);
+}
+main {
+  display: flex;
+  min-height: 100vh;
+}
+main .card-details {
+  /* max-width: 550px;
+    min-width: 400px; */
+  width: 30%;
+  background-image: url(./images/bg-main-desktop.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main .card-details .front-card,
+main .card-details .back-card {
+  width: 425px;
+  color: hsl(270, 3%, 87%);
+  position: relative;
+}
+main .card-details .front-card {
+  margin-left: 100px;
+  margin-bottom: 30px;
+}
+main .card-details .front-card .front {
+  width: 100%;
+  /* box-shadow: 1px 1px 15px hsl(279, 6%, 55%); */
+}
+main .card-details .front-card .logo {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+main .card-details .front-card .card-info {
+  width: 90%;
+  position: absolute;
+  margin: 0 auto;
+  z-index: 5;
+  left: 20px;
+  bottom: 30px;
+  right: 20px;
+  text-transform: uppercase;
+}
+main .card-details .front-card .card-info h2 {
+  letter-spacing: 4px;
+  margin-bottom: 19px;
+  font-size: 25px;
+}
+main .card-details .front-card .card-info .name-date {
+  font-weight: 500;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 2px;
+}
+main .card-details .front-card .card-info .name-date p{
+    margin: 0;
+    font-size: 16px;
+}
+main .card-details .back-card {
+  margin-left: 175px;
+}
+main .card-details .back-card p {
+  position: absolute;
+  right: 35px;
+  top: 90px;
+  letter-spacing: 2px;
+}
+/* form input */
+main .card-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+form {
+  max-width: 400px;
+}
+form .input-item {
+  width: 350px;
+  margin-bottom: 10px;
+  margin: 0 auto 10px auto;
+}
+form label {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--body-clr);
+}
+form label[for="date"] {
+  margin-right: 40px;
+}
+form label[for="cvc"] {
+  margin-right: 150px;
+}
+form input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 2px solid hsl(270, 3%, 87%);
+  position: relative;
+  outline: none;
+}
+
+form input:focus {
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    to right,
+    hsl(249, 99%, 64%),
+    hsl(278, 94%, 30%)
+  );
+}
+form input[name="month"],
+form input[name="year"] {
+  width: 50px;
+}
+form input[name="year"] {
+  margin-right: 50px;
+  margin-left: 10px;
+}
+form input[name="cvc"] {
+  width: 180px;
+}
+form .input-item p {
+    font-size: 12px;
+    color: var(--input-error-clr);
+    margin-top: 5px;
+}
+.error-messages {
+    display: flex;
+}
+.error-messages > * {
+    width: 50%;
+    padding-right: 50px;
+}
+.error {
+    border: 2px solid hsl(0, 100%, 66%);
+}
+button {
+  width: 100%;
+  padding: 13px;
+  outline: none;
+  border: none;
+  background-color: var(--body-clr);
+  color: hsl(270, 3%, 87%);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 200ms,
+  color 200ms;
+}
+button:hover {
+    background-color: hsl(279, 6%, 55%);
+    color: hsl(278, 68%, 11%);
+}
+/* complete state */
+.complete-state {
+  display: none;
+  text-align: center;
+  min-width: 300px;
+}
+.complete-state h1 {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 28px;
+}
+.complete-state p {
+  font-size: 14px;
+  color: hsl(279, 6%, 55%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: -25px;
+  color: hsl(0, 100%, 66%);
+}
+.attribution a {
+  color: hsl(279, 6%, 55%);
+  font-weight: 500;
+  text-decoration: none;
+}
+.attribution a:hover {
+    color: hsl(278, 94%, 30%);
+}
+
+
+@media (max-width: 1250px) {
+    main .card-details {
+        width: 35%;
+    }
+    main .card-details .front-card {
+        margin-left: 50px;
+    }
+    main .card-details .back-card {
+        margin-left: 125px;
+    }
+    form {
+        margin-left: 100px;
+    }
+}
+@media (max-width: 1050px) {
+    main .card-details {
+        width: 40%;
+    }
+    main .card-details .front-card {
+        margin-left: 20px;
+    }
+    main .card-details .back-card {
+        margin-left: 70px;
+    }
+}
+@media (max-width:900px) {
+    main .card-details {
+        width: 45%;
+    }
+    main .card-details .front-card {
+        margin-left: 10px;
+    }
+    main .card-details .back-card {
+        margin-left: 20px;
+    }
+}
+@media (max-width: 850px) {
+    main {
+        flex-direction: column;
+    }
+    main .card-details {
+        background-image: url(./images/bg-main-mobile.png);
+        width: 100%;
+        padding-top: 30px;
+        height: 300px;
+    }
+    main .card-details .front-card,
+    main .card-details .back-card img{
+        width: 350px;
+    }
+    main .card-details .front-card .card-info h2 {
+        letter-spacing: 3px;
+        font-size: 22px;
+}
+main .card-details .front-card .card-info .name-date p{
+    margin: 0;
+}
+    main .card-details .front-card .front {
+        position: absolute;
+        z-index: 1;
+        top: 0px;
+        left: 65px;
+    }
+    main .card-details .front-card .logo {
+        z-index: 3;
+        top: 20px;
+        left: 85px;
+    }
+    main .card-details .front-card .card-info{
+        z-index: 6;
+        top: 90px;
+        left: 85px;
+    }
+    main .card-details .back-card img  {
+        position: absolute;
+        top: -130px;
+        right: -150px;
+    }
+    main .card-details .back-card p {
+    right: -105px;
+    top: -65px;
+    }
+    form {
+        margin-top: 80px;
+        margin-left: 0px;
+    }
+    .attribution{
+        margin: 20px 0;
+    }
+}
+@media (max-width: 620px) {
+    main .card-details {
+        height: 250px;
+    }
+    main .card-details .front-card,
+    main .card-details .back-card img {
+        width: 300px;
+    }
+    main .card-details .front-card .card-info h2 {
+        letter-spacing: 2.5px;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    main .card-details .front-card .card-info{
+        top: 85px;
+        left: 85px;
+    }
+    main .card-details .front-card .card-info .name-date p{
+        font-size: 12px;
+    }
+    main .card-details .back-card img  {
+        top: -135px;
+        right: -50px;
+    }
+    main .card-details .back-card p {
+        right: -15px;
+        top: -83px;
+    }
+    main .complete-state {
+        margin-top: 100px;
+    }
+    .attribution{
+        margin: -10px 0 5px 0;
+    }
+}
+@media (max-width: 500px) {
+    main .card-details .front-card,
+    main .card-details .back-card img {
+        width: 275px;
+    }
+    main .card-details .front-card .front  {
+        left: 10px;
+    }
+    main .card-details .front-card .logo {
+        left: 25px;
+        width: 60px;
+    }
+    main .card-details .front-card .card-info{
+        top: 80px;
+        left: 25px;
+    }
+    main .card-details .back-card img  {
+        top: -115px;
+        right: 110px;
+    }
+    main .card-details .back-card p {
+        right: 140px;
+        top: -67px;
+        font-size: 16px;
+    }
+    form {
+        width: 300px;
+    }
+    form .input-item {
+        width: 100%;
+    }
+    form label[for="cvc"] {
+        margin-right: 100px;
+    }
+    form input[name="cvc"] {
+        width: 160px;
+    }
+    form label[for="date"] {
+    margin-right: 10px;
+    }
+    form input[name="year"] {
+    margin-right: 20px;
+    margin-left: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
